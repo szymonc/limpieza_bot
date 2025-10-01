@@ -6,8 +6,10 @@ from telegram.ext import (
     MessageHandler, ContextTypes, filters
 )
 
-# Read TOKEN from env (preferred for hosting like Render/Railway).
-TOKEN = os.getenv("TOKEN", "YOUR_BOT_API_TOKEN")
+TOKEN = os.getenv("TOKEN")
+
+if not TOKEN:
+    raise RuntimeError("Set env var TOKEN with your bot token")
 
 # Manual Spanish month abbreviations (capitalized)
 MONTHS_SHORT = {
