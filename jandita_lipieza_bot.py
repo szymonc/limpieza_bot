@@ -5,11 +5,12 @@ from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler,
     MessageHandler, ContextTypes, filters
 )
+import os
 
 # Use Spanish locale for month names (requires es_ES installed on system)
 locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")
 
-TOKEN = "8164473342:AAGNBxvfm5o5r56vTIIGLN8e3ejVsR3tff4"
+TOKEN = os.getenv("TOKEN")
 
 weeks = {}
 pending_edits = {}  # {user_id: {"week": key, "field": "familia"|"turno"}}
