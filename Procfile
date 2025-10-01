@@ -1,1 +1,1 @@
-worker: python bot.py
+worker: python jandita_limpieza_bot.py
